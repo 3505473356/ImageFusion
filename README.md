@@ -1,6 +1,6 @@
 # ImageFusion
 
-The content in three files are same, ipynb file has visualization result, 
+The content in three files are same, ipynb file has visualization result, Correlation_fusion_shorter is shorter and easy to read.
 
 ## Method
 
