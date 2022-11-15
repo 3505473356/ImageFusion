@@ -12,7 +12,7 @@ Take same cut-out in RGB and IR imgs -> single image processing seperately -> do
 
 3. Evaluate performance
 
-Collecting three AE arrarys including all cut-outs in single RGB-img, single IR-img and fusion img respectively -> Compare MAE(Mean AE) of three AE arrays and compare them.
+Collecting three AE arrarys including all cut-outs in single RGB-img, single IR-img and fusion img respectively -> Compare MAE(Mean AE) of three AE arrays and compare them -> Repeat it for more images
 
 ## Functions
 `correlaion`: read images, cut one specific shape cut-out, use Torch.nn.functional.conv2d to generate similarity array and use softmax calculate probability array, output most likely position, evaluate perfomance and show result. 
