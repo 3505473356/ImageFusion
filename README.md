@@ -3,12 +3,15 @@
 ## Method
 
 1. Single image processing
+
 Cut-out from imgs -> Slide the cut-out through full image and calculate similarity using torch.nn.functional.Conv2d -> Calculate probability using softmax -> Find most likely position -> Evaluate the distance between ground truth and given output by Absolute Error.
 
 2. Fusion image processing
+
 Take same cut-out in RGB and IR imgs -> single image processing seperately -> dot multiply two probability arrays -> Find most likely position -> Evaluate the distance between ground truth and given output by Absolute Error.
 
 3. Evaluate performance
+
 Collecting three AE arrarys including all cut-outs in single RGB-img, single IR-img and fusion img respectively -> Compare MAE(Mean AE) of three AE arrays and compare them.
 
 ## Functions
