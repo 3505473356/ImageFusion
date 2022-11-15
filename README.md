@@ -1,5 +1,7 @@
 # ImageFusion
 
+The content in three files are same, ipynb file has visualization result, 
+
 ## Method
 
 1. Single image processing
