@@ -2,6 +2,17 @@
 
 The content in three files are same, ipynb file has visualization result, Correlation_fusion_shorter is shorter and easy to read.
 
+## Files Structure
+
+Dataset ----- 
+
+## Creating dataset
+### Images align
+
+### Problems
+
+## Image Fusion
+
 ## Method
 
 1. Single image processing
