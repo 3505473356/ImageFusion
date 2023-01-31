@@ -2,6 +2,10 @@
 
 The content in three files are same, ipynb file has visualization result, Correlation_fusion_shorter is shorter and easy to read.
 
+Key work: 1. Align images based on moving distance from origin point. 2. Zoom in IR images to match the size of RGB images(640x480), cut embeded images and circular pad reference images. 3. Correlate images. 
+
+Pipeline: align and export images ---> image processing of IR images ---> choose embeded images and reference images ---> image processing of embeded and reference images ---> Correlate IR images and RGB images separately ---> combine IR and RGB correlation result ---> final result.
+
 ## Files Structure
 
 ![image](https://github.com/3505473356/ImageFusion/blob/main/Files_structure.png)
