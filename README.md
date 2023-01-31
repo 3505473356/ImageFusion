@@ -4,7 +4,7 @@ The content in three files are same, ipynb file has visualization result, Correl
 
 ## Files Structure
 
-Dataset ----- 
+![image](https://github.com/3505473356/ImageFusion/blob/main/Files_structure.png)
 
 ## Creating dataset
 ### Images align
