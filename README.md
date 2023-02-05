@@ -6,15 +6,15 @@ Pipeline: 1. Align images: Exract images in the same moving distance using senso
 
 2. Image processing: Rectify IR and RGB images into the same shape (640x480). Define reference dataset and embeded datset, then cut embeded images and circular pad reference images.
 
-![image](https://github.com/3505473356/ImageFusion/blob/main/Align_images.png)
+![image](https://github.com/3505473356/ImageFusion/blob/main/Picture/Align_images.png)
 
 3. Correlation: Correlate IR reference images and IR embeded images and output the IR likelihood map. Same for RGB images and output the RGB likelihood map. Combine IR and RGB likelihood maps, then output fusion map which is the basis of finding displacement of embeded images.
 
-![image](https://github.com/3505473356/ImageFusion/blob/main/Correlate_result.png)
+![image](https://github.com/3505473356/ImageFusion/blob/main/Picture/Correlate_result.png)
 
 ## Dataset
 ### Files Structure
-![image](https://github.com/3505473356/ImageFusion/blob/main/Files_structure.png)
+![image](https://github.com/3505473356/ImageFusion/blob/main/Picture/Files_structure.png)
 
 ### Content
 path0: 11 videos and 18,490 images(Including IR and RGB images)
@@ -40,7 +40,9 @@ Take same embedded RGB and IR images -> single image processing seperately -> do
 
 Collecting three AE arrarys including all cut-outs in single RGB-img, single IR-img and fusion img respectively -> Compare MAE(Mean AE) of three AE arrays and compare them -> Repeat it for more images and compare the mean MAE in all three types' correlation.
 
+In the `Code` file, `load_dataset.py` is used for extracting and processing images, `img_fusion_GPU` is used for correlation.
+
 ## Result
 The fusion result is better than single IR or RGB results. But the error is high around 200 pixels, I think maybe because the correlation method and the background is light, pixles value are very high.
 
-![image](https://github.com/3505473356/ImageFusion/blob/main/Result.png)
+![image](https://github.com/3505473356/ImageFusion/blob/main/Picture/Result.png)
