@@ -12,13 +12,19 @@ Pipeline: 1. Align images: Exract images in the same moving distance using senso
 
 ![image](https://github.com/3505473356/ImageFusion/blob/main/Correlate_result.png)
 
-## Files Structure
-
+## Dataset
+### Files Structure
 ![image](https://github.com/3505473356/ImageFusion/blob/main/Files_structure.png)
 
-## Dataset
+### Content
+path0: 11 videos and 18,490 images(Including IR and RGB images)
+path1: 7 videos and 17700 images(Including IR and RGB images)
+path2: 4 videos and 9028 images(Including IR and RGB images)
 
 ### Problems
+1. Some rosbags only 400 MB and do not contain enough information.
+2. Some rosbgas' global times in IR camera and RGB camera are not aligned, extracted IR and RGB images are not paird, like extracting 45 IR images and 125 RGB images in one rosbag, so I delete them.
+3. In different rosbags, the exported images' number is not same, like in path0: 2021-09-04-18-20-54 video has 1864 pairs but 2021-09-04-18-41-36 video has 1899 pairs, I think the car can not start or stop in the same points exactly. So in correlation I take the number of bathes in the less one, but its influence is insignificant.
 
 ## Image Fusion
 
