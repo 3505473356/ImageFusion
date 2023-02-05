@@ -2,7 +2,8 @@
 
 Keywork: 1. Align images. 2. Image process. 3. Correlate images. 
 
-Pipeline: 1. Align images: Exract images in the same moving distance using sensors' data in rosbags. Then export IR images and RGB images separately. \\
+Pipeline: 1. Align images: Exract images in the same moving distance using sensors' data in rosbags. Then export IR images and RGB images separately.
+
 2. Image processing: Rectify IR and RGB images into the same shape (640x480). Define reference dataset and embeded datset, then cut embeded images and circular pad reference images.
 
 ![image](https://github.com/3505473356/ImageFusion/blob/main/Align_images.png)
