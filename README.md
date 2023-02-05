@@ -1,17 +1,21 @@
 # ImageFusion
 
-The content in three files are same, ipynb file has visualization result, Correlation_fusion_shorter is shorter and easy to read.
+Keywork: 1. Align images. 2. Image process. 3. Correlate images. 
 
-Key work: 1. Align images based on moving distance from origin point. 2. Zoom in IR images to match the size of RGB images(640x480), cut embeded images and circular pad reference images. 3. Correlate images. 
+Pipeline: 1. Align images: Exract images in the same moving distance using sensors' data in rosbags. Then export IR images and RGB images separately. 
+2. Image processing: Rectify IR and RGB images into the same shape (640x480). Define reference dataset and embeded datset, then cut embeded images and circular pad reference images.
 
-Pipeline: align and export images ---> image processing of IR images ---> choose embeded images and reference images ---> image processing of embeded and reference images ---> Correlate IR images and RGB images separately ---> combine IR and RGB correlation result ---> final result.
+![image](https://github.com/3505473356/ImageFusion/blob/main/Align_images.png)
+
+3. Correlation: Correlate IR reference images and IR embeded images and output the IR likelihood map. Same for RGB images and output the RGB likelihood map. Combine IR and RGB likelihood maps, then output fusion map which is the basis of finding displacement of embeded images.
+
+![image](https://github.com/3505473356/ImageFusion/blob/main/Correlate_result.png)
 
 ## Files Structure
 
 ![image](https://github.com/3505473356/ImageFusion/blob/main/Files_structure.png)
 
-## Creating dataset
-### Images align
+## Dataset
 
 ### Problems
 
