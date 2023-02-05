@@ -43,6 +43,6 @@ Collecting three AE arrarys including all cut-outs in single RGB-img, single IR-
 In the `Code` file, `load_dataset.py` is used for extracting and processing images, `img_fusion_GPU` is used for correlation.
 
 ## Result
-The fusion result is better than single IR or RGB results. But the error is high around 200 pixels, I think maybe because the correlation method and the background is light, pixles value are very high.
+The fusion result is better than single IR or RGB results. But the error is high around 200 pixels, I think maybe because the correlation method and the background is light, pixles value are very high which increase the similarity of the not matched area.
 
 ![image](https://github.com/3505473356/ImageFusion/blob/main/Picture/Result.png)
