@@ -28,11 +28,11 @@ path2: 4 videos and 9028 images(Including IR and RGB images)
 
 ## Method
 
-1. Single image processing
+1. Single image pipeline
 
 Cut out embedded images and pad reference images -> Slide the embedded images through reference images and calculate similarity using torch.nn.functional.Conv2d -> Normalization -> Calculate likelihood using softmax -> Find most likely position -> Evaluate the distance between ground truth and given output by Absolute Error.
 
-2. Fusion image processing
+2. Fusion image pipeline
 
 Take same embedded RGB and IR images -> single image processing seperately -> dot multiply two likelihood arrays -> Find most likely position -> Evaluate the distance between ground truth and given output by Absolute Error.
 
