@@ -40,7 +40,7 @@ Take same embedded RGB and IR images -> single image processing seperately -> do
 
 Collecting three AE arrarys including all cut-outs in single RGB-img, single IR-img and fusion img respectively -> Compare MAE(Mean AE) of three AE arrays and compare them -> Repeat it for more images and compare the mean MAE in all three types' correlation.
 
-In the `Code` file, `load_dataset.py` is used for extracting and processing images, `img_fusion_GPU` is used for correlation.
+In the `Code` file, `align_images.py` file is used for extrating pair IR and RGB images from rosbags. Add it into "src" of ros workspace and build it, then "rosrun [ros package name] [align_images.py]". `load_dataset.py` is used for extracting and processing images, `img_fusion_GPU` is used for correlation.
 
 ## Result
 The fusion result is better than single IR or RGB results. But the error is high around 200 pixels, I think maybe because the correlation method and the background is light, pixles value are very high which increase the similarity of the not matched area.
