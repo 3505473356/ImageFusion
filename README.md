@@ -42,7 +42,7 @@ Take same embedded RGB and IR images -> single image processing seperately -> do
 2. Standard deviation of AE.
 
 ## Result
-At the decision level, the improvement is unnoticeable, but the fusion results are obust to extreme environmental changes. Experiment result.
+At the decision level, the improvement is unnoticeable, but the fusion results are obust to extreme environmental changes. Experiment result of path0.
 
  <img src="https://github.com/3505473356/ImageFusion/blob/main/Picture/Result_path0.png" width = "600" height = "500" alt="example" align=center />
  
