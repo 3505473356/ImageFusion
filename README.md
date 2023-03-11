@@ -2,7 +2,7 @@
 
 ## Introudction
 
-This project aims to improve Visual teach and repeat navigation (VT&R) systems' performance in illumination changes using one Siamese-CNN trained in a contrastive learning manner which fuses infrared and RGB images at the decision and feature levels. It is based on the pervious work in (VT&R) system which aims to find the horizontal displacement between prerecorded and currently perceived images required to steer a robot towards the previously traversed path^( [1]).
+This project aims to improve Visual teach and repeat navigation (VT&R) systems' performance in illumination changes using one Siamese-CNN trained in a contrastive learning manner which fuses infrared and RGB images at the decision and feature levels. It is based on the pervious work in (VT&R) system which aims to find the horizontal displacement between prerecorded and currently perceived images required to steer a robot towards the previously traversed path<sup>[1]</sup>.
 
 Keywork: 1. Align images. 2. Image process. 3. Correlate images. 
 
