@@ -4,11 +4,9 @@
 
 This project aims to improve Visual teach and repeat navigation (VT&R) systems' performance in illumination changes using one Siamese-CNN trained in a contrastive learning manner which fuses infrared and RGB images at the decision and feature levels. It is based on the pervious work in (VT&R) system which aims to find the horizontal displacement between prerecorded and currently perceived images required to steer a robot towards the previously traversed path<sup>[1]</sup>.
 
-Keywork: 1. Align images. 2. Image process. 3. Correlate images. 
+## Preparation
 
-Pipeline: 1. Align images: Exract images in the same moving distance using sensors' data in rosbags. Then export IR images and RGB images separately.
-
-2. Image processing: Rectify IR and RGB images into the same shape (640x480). Define reference dataset and embeded datset, then cut embeded images and circular pad reference images.
+Build dataset: According to wheel odometry, IR and RGB image pairs are aligned and extracted at a regular distance in rosbags. Rectify these image pairs and store them as dataset. Below is one example:
 
 ![image](https://github.com/3505473356/ImageFusion/blob/main/Picture/Align_images.png)
 
