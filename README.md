@@ -6,31 +6,22 @@ This project aims to improve Visual teach and repeat navigation (VT&R) systems' 
 
 ## Preparation
 
-Build dataset: According to wheel odometry, IR and RGB image pairs are aligned and extracted at a regular distance in rosbags. Rectify these image pairs and store them as dataset. Below is one example:
+`Build dataset`: According to wheel odometry, IR and RGB image pairs are aligned and extracted at a regular distance in rosbags. Rectify these image pairs and store them as dataset. Below is one example:
 
  <img src="https://github.com/3505473356/ImageFusion/blob/main/Picture/Align_images.png" width = "600" height = "500" alt="example" align=center />
-
-<!-- ![image](https://github.com/3505473356/ImageFusion/blob/main/Picture/Align_images.png =100) -->
-
-3. Correlation: Correlate IR reference images and IR embeded images and output the IR likelihood map. Same for RGB images and output the RGB likelihood map. Combine IR and RGB likelihood maps, then output fusion map which is the basis of finding displacement of embeded images.
-
-![image](https://github.com/3505473356/ImageFusion/blob/main/Picture/Correlate_result.png)
-
-## Dataset
-### Files Structure
-![image](https://github.com/3505473356/ImageFusion/blob/main/Picture/Files_structure.png)
 
 ### Content
 path0: 11 videos and 18,490 images(Including IR and RGB images)
 path1: 7 videos and 17700 images(Including IR and RGB images)
 path2: 4 videos and 9028 images(Including IR and RGB images)
 
-### Problems
-1. Some rosbags only 400 MB and do not contain enough information.
-2. Some rosbgas' global times in IR camera and RGB camera are not aligned, extracted IR and RGB images are not paird, like extracting 45 IR images and 125 RGB images in one rosbag, so I delete them.
-3. In different rosbags, the exported images' number is not same, like in path0: 2021-09-04-18-20-54 video has 1864 pairs but 2021-09-04-18-41-36 video has 1899 pairs, I think the car can not start or stop in the same points exactly. So in correlation I take the number of bathes in the less one, but its influence is insignificant.
+
+<!-- ## Dataset
+### Files Structure
+![image](https://github.com/3505473356/ImageFusion/blob/main/Picture/Files_structure.png) -->
 
 ## Method
+### Decision level
 
 1. Single image pipeline
 
@@ -40,13 +31,16 @@ Cut out embedded images and pad reference images -> Slide the embedded images th
 
 Take same embedded RGB and IR images -> single image processing seperately -> dot multiply two likelihood arrays -> Find most likely position -> Evaluate the distance between ground truth and given output by Absolute Error.
 
-3. Evaluate performance
+### Feature level
+1. Combine infrared image and RGB image into one four channel image (Red, Green, Blue, Infrared).
 
-Collecting three AE arrarys including all cut-outs in single RGB-img, single IR-img and fusion img respectively -> Compare MAE(Mean AE) of three AE arrays and compare them -> Repeat it for more images and compare the mean MAE in all three types' correlation.
+2. Train one Siamse-CNN for combined imgae input.
 
-In the `Code` file, `align_images.py` file is used for extrating pair IR and RGB images from rosbags. Add it into "src" of ros workspace and build it, then "rosrun [ros package name] [align_images.py]". `load_dataset.py` is used for extracting and processing images, `img_fusion_GPU` is used for correlation.
+### Evaluation
+
+1. Absoulte error: Output displacement - ground truth
+2. Standard deviation of AE.
 
 ## Result
-The fusion result is better than single IR or RGB results. But the error is high around 200 pixels, I think maybe because the correlation method and the background is light, pixles value are very high which increase the similarity of the not matched area.
+At the decision level, the improvement is unnoticeable, but the fusion results are obust to extreme environmental changes.
 
-![image](https://github.com/3505473356/ImageFusion/blob/main/Picture/Result.png)
