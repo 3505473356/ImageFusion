@@ -8,7 +8,7 @@ This project aims to improve Visual teach and repeat navigation (VT&R) systems' 
 
 Build dataset: According to wheel odometry, IR and RGB image pairs are aligned and extracted at a regular distance in rosbags. Rectify these image pairs and store them as dataset. Below is one example:
 
- <img src="[./xxx.png](https://github.com/3505473356/ImageFusion/blob/main/Picture/Align_images.png)" width = "300" height = "200" alt="图片名称" align=center />
+ <img src="https://github.com/3505473356/ImageFusion/blob/main/Picture/Align_images.png" width = "300" height = "200" alt="example" align=center />
 
 <!-- ![image](https://github.com/3505473356/ImageFusion/blob/main/Picture/Align_images.png =100) -->
 
