@@ -46,6 +46,6 @@ At the decision level, the improvement is unnoticeable, but the fusion results a
 
  <img src="https://github.com/3505473356/ImageFusion/blob/main/Picture/Result_path0.png" width = "600" height = "500" alt="example" align=center />
  
-One detailed result shows below:
+One detailed result, when there is sun glare at daylight shows below:
 
- <img src="https://github.com/3505473356/ImageFusion/blob/main/Picture/example.png" width = "600" height = "500" alt="example" align=center />
+ <img src="https://github.com/3505473356/ImageFusion/blob/main/Picture/example.png" width = "600" height = "360" alt="example" align=center />
